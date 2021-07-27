@@ -1,34 +1,71 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
 
-body{
-    height: 100%;
+body {
+    font-family: 'Roboto', sans-serif;
+
     background-image: url("./resources/World_Map_More_Detail_clip_art.svg");
     background-repeat: no-repeat;
     background-size: cover;
-    font-family: 'Roboto', sans-serif;
+
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-main{
-    width: 600px;
+.cards{  /* container */
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    height: 400px;
+    width: 700px;
+}
+.group{ /* item */
+
+    background-color: antiquewhite;
+    width: 200px;
+    height: 200px;
+
+    border: 1px solid salmon;
+    border-radius: 10px;
+
+    margin: 10px;
+
+    transition: all 0.75s linear;
+    transform-style: preserve-3d;
+
+    text-align: center;
+}
+
+.front, .back{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    -moz-backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.front{
+    color: salmon;
+    z-index: 2;
+}
+
+.back{
+    z-index: 1;
+    transform: rotateY(180deg);
+    color: white;
+}
+
+.group:hover{
+    transform: rotateY(180deg);
+    background-color: orange;
 }
 
 h1{
     text-align: center;
-    flex: 0 0 100%;
-}
-.card{
-    background-color: antiquewhite;
-    color: black;
-    min-width: 150px;
-    min-height: 150px;
-    margin: 2%;
-    text-align: center;
-}
-.cards{
-    display: flex;
-    flex: 1 1 auto;
-    align-items: center;
-    justify-content: space-around;
-    flex-wrap: wrap;
-
 }
